@@ -1,0 +1,26 @@
+--- freecnc-20050409/src/vfs/vfs.cpp~	2005-03-26 00:49:21.000000000 +0100
++++ freecnc-20050409/src/vfs/vfs.cpp	2005-04-09 23:26:39.000000000 +0200
+@@ -48,7 +48,11 @@
+     externals->loadArchive(tempstr.c_str());
+ #if defined _WIN32
+ #else
+-    externals->loadArchive("/etc/freecnc/");
++    char f[1024];
++    sprintf(f, "%s/.freecnc/", getenv("HOME_ETC") ? getenv("HOME_ETC") : getenv("HOME"));
++    externals->loadArchive(f);
++    externals->loadArchive("/etc/");
++    externals->loadArchive("/usr/share/freecnc/");
+ #endif
+ 
+     try {
+--- freecnc-20050409/src/freecnc.cpp~	2005-03-26 00:49:18.000000000 +0100
++++ freecnc-20050409/src/freecnc.cpp	2005-04-09 23:35:21.000000000 +0200
+@@ -67,7 +67,7 @@
+     }
+ 
+     const string& binpath = determineBinaryLocation(argv[0]);
+-    string lf(binpath);
++    string lf("/tmp");
+     lf += "/freecnc.log";
+ 
+     VFS_PreInit(binpath.c_str());
