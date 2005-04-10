@@ -24,3 +24,32 @@
      lf += "/freecnc.log";
  
      VFS_PreInit(binpath.c_str());
+--- freecnc-20050409/src/misc/args.cpp.orig	2005-04-10 00:40:22.000000000 +0200
++++ freecnc-20050409/src/misc/args.cpp	2005-04-10 01:33:21.000000000 +0200
+@@ -55,6 +55,15 @@
+     return config;
+ }
+ 
++std::string ConfigPath(std::string filename)
++{
++    std::string f;
++    f=getenv("HOME_ETC") ? getenv("HOME_ETC") : getenv("HOME");
++    f+="/.freecnc/";
++    f+=filename;
++    return f;
++}
++
+ /** function to parse command line arguments
+  * @param number of arguments
+  * @param pointer to array of arguments
+@@ -69,8 +78,8 @@
+     shared_ptr<INIFile> internal_ini;
+ 
+     try {
+-        freecnc_ini = GetConfig("freecnc.ini");
+-        internal_ini = GetConfig("internal-global.ini");
++        freecnc_ini = GetConfig(ConfigPath("freecnc.ini"));
++        internal_ini = GetConfig(ConfigPath("internal-global.ini"));
+     } catch(runtime_error& e) {
+         logger->error("%s\n",e.what());
+         return false;
