@@ -12,6 +12,7 @@ Source0:	%{name}-%{_snap}.tar.bz2
 Patch0:		%{name}-paths.patch
 URL:		http://freecnc-sf.holarse.net/
 BuildRequires:	SDL-devel
+BuildRequires:	SDL_mixer-devel
 BuildRequires:	boost-conversion-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
