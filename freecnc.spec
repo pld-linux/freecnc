@@ -1,6 +1,6 @@
 %define		_snap	20050409
 Summary:	Reimplemntation of the classic real time strategy hit Command & Conquer
-Summary(pl):	Reimplementacja strategii czasu rzeczywistego Command & Conquer
+Summary(pl.UTF-8):   Reimplementacja strategii czasu rzeczywistego Command & Conquer
 Name:		freecnc
 Version:	0.1
 Release:	0.%{_snap}
@@ -22,10 +22,10 @@ FreeCNC will be a free implementation of the Command & Conquer Game
 Engine written in SDL. It will support the original C&C graphics and
 audio, as well as Red Alert's data files.
 
-%description -l pl
-FreeCNC bêdzie wolnodostêpn±, napisan± w SDL implementacj± silnika gry
-Command & Conquer. Bêdzie wspieraæ grafikê i efekty d¼wiêkowe zarówno
-z plików gry Command & Conquer jak i Red Alert.
+%description -l pl.UTF-8
+FreeCNC bÄ™dzie wolnodostÄ™pnÄ…, napisanÄ… w SDL implementacjÄ… silnika gry
+Command & Conquer. BÄ™dzie wspieraÄ‡ grafikÄ™ i efekty dÅºwiÄ™kowe zarÃ³wno
+z plikÃ³w gry Command & Conquer jak i Red Alert.
 
 %prep
 %setup -q -n %{name}-%{_snap}
