@@ -1,6 +1,6 @@
 %define		_snap	20050409
 Summary:	Reimplemntation of the classic real time strategy hit Command & Conquer
-Summary(pl.UTF-8):   Reimplementacja strategii czasu rzeczywistego Command & Conquer
+Summary(pl.UTF-8):	Reimplementacja strategii czasu rzeczywistego Command & Conquer
 Name:		freecnc
 Version:	0.1
 Release:	0.%{_snap}
