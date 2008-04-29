@@ -13,7 +13,7 @@ Patch0:		%{name}-paths.patch
 URL:		http://freecnc-sf.holarse.net/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_mixer-devel
-BuildRequires:	boost-conversion-devel
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
