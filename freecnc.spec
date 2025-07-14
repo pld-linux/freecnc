@@ -29,7 +29,7 @@ z plików gry Command & Conquer jak i Red Alert.
 
 %prep
 %setup -q -n %{name}-%{_snap}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} \
